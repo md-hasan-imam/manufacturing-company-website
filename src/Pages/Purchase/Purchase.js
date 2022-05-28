@@ -23,12 +23,14 @@ const Purchase = () => {
 
     const onSubmit = data => {
         const order = {
-            productId: _id,
-            productName: name,
-            customerAddress: data.address,
-            customeremail: data.email,
+            _id: _id,
+            name: name,
+            address: data.address,
+            email: data.email,
             customername: data.name,
-            orderQuantity: data.orderQuantity
+            orderQuantity: data.orderQuantity,
+            price: price,
+            img:img,
         }
         fetch('http://localhost:5000/order', {
             method: 'POST',

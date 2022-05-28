@@ -1,76 +1,22 @@
 [
-
     {
-        "name": " Silencer",
-        "img": "https://i.ibb.co/PDxbqL4/product14.webp",
-        "description": "Air filter filters all the dust from the hood and protect car from getting jamm.",
-        "price":300,
-        "availableQuantity": 550,
-        "minOrderQuantity":100 
+        "name": "Tonny",
+        "description": "This is the place where i easily find the perfect parts for my car. I definitely recommend other to stay connected with AUTOMA",
+        "ratings":5
     },
     {
-        "name": "Tire ",
-        "img": "https://i.ibb.co/0hzc8Sf/product3.webp",
-        "description": "Air filter filters all the dust from the hood and protect car from getting jamm.",
-        "price":300,
-        "availableQuantity": 550,
-        "minOrderQuantity":100 
+        "name": "Steve",
+        "description": "This is the place where i easily find the perfect parts for my car. I definitely recommend other to stay connected with AUTOMA",
+        "ratings":5
     },
     {
-        "name": "A/C Condensers",
-        "img": "https://i.ibb.co/5sdhty8/product8.webp",
-        "description": "Air filter filters all the dust from the hood and protect car from getting jamm.",
-        "price":300,
-        "availableQuantity": 550,
-        "minOrderQuantity":100 
+        "name": "John",
+        "description": "This is the place where i easily find the perfect parts for my car. I definitely recommend other to stay connected with AUTOMA",
+        "ratings":5
     },
     {
-        "name": "Tail Lights",
-        "img": "https://i.ibb.co/T29DDCx/product10.webp",
-        "description": "Air filter filters all the dust from the hood and protect car from getting jamm.",
-        "price":300,
-        "availableQuantity": 550,
-        "minOrderQuantity":100 
-    },
-    {
-        "name": "Battery",
-        "img": "https://i.ibb.co/PDxbqL4/product14.webp",
-        "description": "Air filter filters all the dust from the hood and protect car from getting jamm.",
-        "price":300,
-        "availableQuantity": 550,
-        "minOrderQuantity":100 
-    },
-    {
-        "name": "Axle",
-        "img": "https://i.ibb.co/wJPy4Nj/product18.webp",
-        "description": "Air filter filters all the dust from the hood and protect car from getting jamm.",
-        "price":300,
-        "availableQuantity": 550,
-        "minOrderQuantity":50 
-    },
-    {
-        "name": "Air Filter",
-        "img": "https://i.ibb.co/SPJzX3r/product12.webp",
-        "description": "Air filter filters all the dust from the hood and protect car from getting jamm.",
-        "price":300,
-        "availableQuantity": 550,
-        "minOrderQuantity":100 
-    },
-    {
-        "name": "Oil Filter",
-        "img": "https://i.ibb.co/V0GRqJy/product16.webp",
-        "description": "Air filter filters all the dust from the hood and protect car from getting jamm.",
-        "price":300,
-        "availableQuantity": 550,
-        "minOrderQuantity":100 
-    },
-    {
-        "name": "Battery",
-        "img": "https://i.ibb.co/Vm7hrhw/product9.webp",
-        "description": "Air filter filters all the dust from the hood and protect car from getting jamm.",
-        "price": 300,
-        "availableQuantity": 550,
-        "minOrderQuantity":100 
+        "name": "Fernandez",
+        "description": "This is the place where i easily find the perfect parts for my car. I definitely recommend other to stay connected with AUTOMA",
+        "ratings":5
     }
-    
 ]
