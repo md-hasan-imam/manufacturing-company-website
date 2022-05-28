@@ -7,10 +7,8 @@ import BusinessSummary from './BusinessSummary';
 
 const Home = () => {
 
-    const [parts, setParts] = useParts([]);
+    const [parts, setParts] = useParts();
     const homePageParts = parts.slice(0, 6);
-
-    const navigate = useNavigate();
 
     return (
         <div>
