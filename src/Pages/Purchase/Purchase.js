@@ -17,7 +17,7 @@ const Purchase = () => {
 
 
     // purchase form 
-    const { register, formState: { errors },formState, handleSubmit } = useForm({
+    const { register, formState: { errors },formState, handleSubmit , reset} = useForm({
         mode: "onChange"
     });
 
@@ -48,6 +48,7 @@ const Purchase = () => {
                 else{
                     toast.error('Check Again')
                 }
+                reset();
             });
     }
 
@@ -59,7 +60,6 @@ const Purchase = () => {
                 data => setParts(data)
             )
     }, [id])
-
 
 
     return (
@@ -129,7 +129,7 @@ const Purchase = () => {
                                     />
                                     <label className="label">
                                         {errors.address?.type === 'required' && <span className="label-text-alt text-red-500">{errors.address?.message}</span>}
-                                        {errors.orderQuantity?.type === 'min' || 'max' && <span className="label-text-alt text-red-500">{errors?.orderQuantity?.message}</span>}
+                                        {errors.orderQuantity?.type === ('min' || 'max') && <span className="label-text-alt text-red-500">{errors?.orderQuantity?.message}</span>}
                                     </label>
                                 </div>
                                 <input className='btn w-full max-w-xs bg-yellow-300 text-secondary my-3 hover:bg-primary' disabled={!formState.isValid} type="submit" value="Place Order" />
