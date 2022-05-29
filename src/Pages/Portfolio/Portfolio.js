@@ -28,7 +28,7 @@ const Portfolio = () => {
                 <div class="card w-3/5 mx-auto bg-slate-100 text-black my-4">
                     <div class="card-body items-center text-left">
                         <h2 class="text-2xl font-bold">AUTOMA Car Parts Manufacturer Website</h2>
-                        <p className='my-3'>Live site link:
+                        <p className='my-3'>Live site link: https://automa-car-parts-manufacturer.web.app/
                         </p>
                     </div>
                 </div>
