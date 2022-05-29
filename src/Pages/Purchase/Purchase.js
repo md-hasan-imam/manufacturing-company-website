@@ -32,7 +32,7 @@ const Purchase = () => {
             customername: data.name,
             orderQuantity: data.orderQuantity,
             price: price,
-            img:img,
+            img:img
         }
         fetch('https://rocky-reef-55202.herokuapp.com/order', {
             method: 'POST',

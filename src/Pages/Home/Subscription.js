@@ -2,7 +2,7 @@ import React from 'react';
 
 const Subscription = () => {
     return (
-        <div className='mx auto'>
+        <div className='mx auto mb-20'>
             <div class="hero h-auto bg-base-200 py-16">
                 <div class="hero-content flex-col lg:flex-row-reverse">
                     <div class="text-center  px-20">

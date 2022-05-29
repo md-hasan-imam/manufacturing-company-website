@@ -4,6 +4,7 @@ import useParts from '../../Hooks/useParts';
 import Parts from '../Shared/Parts/Parts';
 import Banner from './Banner';
 import BusinessSummary from './BusinessSummary';
+import Gallery from './Gallery';
 import Review from './Review';
 import Subscription from './Subscription';
 
@@ -27,6 +28,7 @@ const Home = () => {
                 </div>
             </div>
             <BusinessSummary></BusinessSummary>
+            <Gallery></Gallery>
             <Review></Review>
             <Subscription></Subscription>
 
