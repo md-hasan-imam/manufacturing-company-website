@@ -13,7 +13,7 @@ const Review = () => {
 
     // const [reviews, setReviews] = useState([]);
 
-    const {data:reviews, isLoading, } =useQuery('reviews',()=>fetch('https://rocky-reef-55202.herokuapp.com/reviews')
+    const {data:reviews, isLoading } =useQuery('reviews',()=>fetch('https://rocky-reef-55202.herokuapp.com/reviews')
             .then(res => res.json())
              )
              if(isLoading){

@@ -25,7 +25,6 @@ const Purchase = () => {
 
     const onSubmit = data => {
         const order = {
-            _id: _id,
             name: name,
             address: data.address,
             email: data.email,

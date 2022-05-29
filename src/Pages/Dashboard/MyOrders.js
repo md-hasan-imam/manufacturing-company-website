@@ -3,30 +3,32 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
+import Loading from '../Loading';
+import { useQuery } from 'react-query';
 
 
 const MyOrders = () => {
 
     const [user] = useAuthState(auth);
-    const [myOrders, setMyorders] = useState([]);
 
     const email = user.email;
 
-    useEffect(() => {
-        fetch(`https://rocky-reef-55202.herokuapp.com/myorder/${email}`, {
-            method: "GET",
-        })
+    const {data:myOrders, isLoading, refetch} =useQuery(['myOrders',email],()=>fetch(`https://rocky-reef-55202.herokuapp.com/myorder/${email}`)
             .then(res => res.json())
-            .then(data => setMyorders(data))
-    }, [email]);
+             )
+             if(isLoading){
+                 <Loading></Loading>
+             }
+    
+
 
     // deleting order 
     const handleDeleteOrder = id => {
 
         const proceed = window.confirm('Do you really want to cancel order?');
-        const productid = id;
+
         if(proceed){
-            fetch(`https://rocky-reef-55202.herokuapp.com/myorder/${email}?productid=${productid}`, {
+            fetch(`https://rocky-reef-55202.herokuapp.com/myorder?id=${id}`, {
             method: "DELETE",
         })
             .then(res => res.json())
@@ -40,6 +42,7 @@ const MyOrders = () => {
                 }
             }
             )
+            refetch();
         }
     }
 
@@ -62,7 +65,7 @@ const MyOrders = () => {
                         {/* -- row 1 -- */}
 
                         {
-                            myOrders.map((order, index) => <tr
+                            myOrders?.map((order, index) => <tr
                                 key={index}
                                 order={order}
                                 class="hover"
