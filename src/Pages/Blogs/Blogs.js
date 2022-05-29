@@ -25,7 +25,7 @@ const Blogs = () => {
                 <div class="card-body items-center text-left">
                     <h2 class="text-xl font-bold">You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?</h2>
                     <p className='my-3'><span className='font-bold '>Ans:</span> There are different ways to find products by name. it can be filter(), includes(). I will use filter in this case. I will   
-Try to use this code on the array of products ==> const  newArray = array.filter(searchedText);
+Try to use this code on the array of products [ const  newArray = array.filter(searchedText)].
                     </p>
                 </div>
             </div>
