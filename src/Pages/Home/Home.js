@@ -4,6 +4,7 @@ import useParts from '../../Hooks/useParts';
 import Parts from '../Shared/Parts/Parts';
 import Banner from './Banner';
 import BusinessSummary from './BusinessSummary';
+import Review from './Review';
 
 const Home = () => {
 
@@ -23,6 +24,7 @@ const Home = () => {
                 }
             </div>
             <BusinessSummary></BusinessSummary>
+            <Review></Review>
             
             
         </div>

@@ -21,25 +21,26 @@ const MyOrders = () => {
     }, [email]);
 
     // deleting order 
-    const handleDeleteOrder = id =>{
+    const handleDeleteOrder = id => {
+
+        const proceed = window.confirm('Do you really want to cancel order?');
         const productid = id;
-
-        fetch(`http://localhost:5000/myorder/${email}?productid=${productid}`, {
-                method: "DELETE",
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                    if (data.deletedCount) {
-                        toast.success(`Order Deleted successfully`)
-                    }
-                    else{
-                        toast.error('action failed')
-                    }
+        if(proceed){
+            fetch(`http://localhost:5000/myorder/${email}?productid=${productid}`, {
+            method: "DELETE",
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.deletedCount) {
+                    toast.success(`Order Deleted successfully`)
                 }
-                )
-
-
+                else {
+                    toast.error('action failed')
+                }
+            }
+            )
+        }
     }
 
 
@@ -76,7 +77,7 @@ const MyOrders = () => {
                                 </td>
                                 {/* deleting order  */}
                                 <td className='text-xl font-bold'>
-                                    <button onClick={()=>handleDeleteOrder(order._id)} className='btn btn-md mx-auto btn-error text-black'>Cancel</button>
+                                    <button onClick={() => handleDeleteOrder(order._id)} className='btn btn-md mx-auto btn-error text-black'>Cancel</button>
                                 </td>
                                 {/* <td>
                                     {( !order.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>Pay Now</button></Link>}
@@ -87,9 +88,6 @@ const MyOrders = () => {
                                 </td> */}
                             </tr>)
                         }
-
-
-
                     </tbody>
                 </table>
             </div>

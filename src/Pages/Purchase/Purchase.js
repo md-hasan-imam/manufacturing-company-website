@@ -17,7 +17,9 @@ const Purchase = () => {
 
 
     // purchase form 
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, formState: { errors },formState, handleSubmit } = useForm({
+        mode: "onChange"
+    });
 
 
 
@@ -49,7 +51,6 @@ const Purchase = () => {
                 }
             });
     }
-
 
     useEffect(() => {
         const url = `http://localhost:5000/part/${id}`;
@@ -107,17 +108,18 @@ const Purchase = () => {
                                 </div>
                                 <div className="form-control w-full max-w-xs">
                                     <input
+                                        defaultValue={minOrderQuantity}
                                         type="number"
                                         placeholder="Select Order Quantity"
                                         className="input input-bordered w-full max-w-xs"
                                         {...register("orderQuantity", {
                                             min: {
-                                                value: { minOrderQuantity },
+                                                value: minOrderQuantity ,
                                                 message: 'Minimum Number of Orders Required'
                                             },
 
                                             max: {
-                                                value: { availableQuantity },
+                                                value: availableQuantity ,
                                                 message: 'Orders must be less than the available stock'
                                             },
                                             required: {
@@ -127,13 +129,11 @@ const Purchase = () => {
                                         })}
                                     />
                                     <label className="label">
-                                        {errors.address?.type === 'required' && <span className="label-text-alt text-red-500">{errors.address.message}</span>}
-                                        {errors.orderQuantity?.type === ('min' || 'max') && <span className="label-text-alt text-red-500">{errors.orderQuantity.message}</span>}
+                                        {errors.address?.type === 'required' && <span className="label-text-alt text-red-500">{errors.address?.message}</span>}
+                                        {errors.orderQuantity?.type === 'min' || 'max' && <span className="label-text-alt text-red-500">{errors?.orderQuantity?.message}</span>}
                                     </label>
                                 </div>
-
-
-                                <input className='btn w-full max-w-xs bg-yellow-300 text-secondary my-3 hover:bg-primary' type="submit" value="Place Order" />
+                                <input className='btn w-full max-w-xs bg-yellow-300 text-secondary my-3 hover:bg-primary' disabled={!formState.isValid} type="submit" value="Place Order" />
                             </form>
                         </div>
                     </div>
