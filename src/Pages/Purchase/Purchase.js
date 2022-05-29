@@ -34,7 +34,7 @@ const Purchase = () => {
             price: price,
             img:img,
         }
-        fetch('http://localhost:5000/order', {
+        fetch('https://rocky-reef-55202.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -53,7 +53,7 @@ const Purchase = () => {
     }
 
     useEffect(() => {
-        const url = `http://localhost:5000/part/${id}`;
+        const url = `https://rocky-reef-55202.herokuapp.com/part/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(

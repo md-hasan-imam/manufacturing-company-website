@@ -13,7 +13,7 @@ const MyOrders = () => {
     const email = user.email;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myorder/${email}`, {
+        fetch(`https://rocky-reef-55202.herokuapp.com/myorder/${email}`, {
             method: "GET",
         })
             .then(res => res.json())
@@ -26,7 +26,7 @@ const MyOrders = () => {
         const proceed = window.confirm('Do you really want to cancel order?');
         const productid = id;
         if(proceed){
-            fetch(`http://localhost:5000/myorder/${email}?productid=${productid}`, {
+            fetch(`https://rocky-reef-55202.herokuapp.com/myorder/${email}?productid=${productid}`, {
             method: "DELETE",
         })
             .then(res => res.json())
