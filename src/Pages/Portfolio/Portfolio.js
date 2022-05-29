@@ -1,4 +1,7 @@
 import React from 'react';
+import portfolioImg from '../../images/portfolioWebsitedentpro.png'
+import portfolioImg2 from '../../images/portfolioWebsitedentpro2.png'
+import portfolioImg3 from '../../images/portfolioWebsitedentpro3.png'
 
 const Portfolio = () => {
     return (
@@ -11,15 +14,40 @@ const Portfolio = () => {
                     <p className=''><span className='font-bold '>Education:</span> Graduated(BBA program major in Marketing)</p>
 
                     <p className='my-2'><span className='font-bold '>Skills:</span></p>
-                        <ul className='font-bold list-disc ml-16'>
-                            <li>MongoDB atlas for database integration</li>
-                            <li>Firebase for authentication</li>
-                            <li>React router</li>
-                            <li>Tailwind, Bootstrap CSS</li>
-                            <li> React firebase Hooks</li>
-                        </ul>
+                    <ul className='font-bold list-disc ml-16'>
+                        <li>MongoDB atlas for database integration</li>
+                        <li>Firebase for authentication</li>
+                        <li>React router</li>
+                        <li>Tailwind, Bootstrap CSS</li>
+                        <li> React firebase Hooks</li>
+                    </ul>
                 </div>
             </div>
+            <div className=''>
+                <h2 className='text-3xl font-bold my-10'>My Developed Websites</h2>
+                <div class="card w-3/5 mx-auto bg-slate-100 text-black my-4">
+                    <div class="card-body items-center text-left">
+                        <h2 class="text-2xl font-bold">AUTOMA Car Parts Manufacturer Website</h2>
+                        <p className='my-3'>Live site link:
+                        </p>
+                    </div>
+                </div>
+                <div class="card w-3/5 mx-auto bg-slate-100 text-black my-5">
+                    <div class="card-body items-center text-left">
+                        <h2 class="text-2xl font-bold">StoreCare inventory management Website</h2>
+                        <p className='my-3'>Live site link: https://inventory-management-sit-7c7f6.web.app/home
+                        </p>
+                    </div>
+                </div>
+                <div class="card w-3/5 mx-auto bg-slate-100 text-black my-4">
+                    <div class="card-body items-center text-left">
+                        <h2 class="text-2xl font-bold">DentPro Dental service porvider Website</h2>
+                        <p className='my-3'>Live site link: https://dentpro-dental-website.web.app/
+                        </p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     );
 };
