@@ -45,7 +45,7 @@ const MyOrders = () => {
 
 
     return (
-        <div className='mt-10'>
+        <div className='mt-10 container'>
             <div class="overflow-x-auto">
                 <table class="table w-full text-center">
                     <thead >
