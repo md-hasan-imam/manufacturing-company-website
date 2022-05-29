@@ -13,15 +13,15 @@ const Parts = ({part}) => {
 
     return (
         <div class="card w-96 bg-base-100 shadow-xl">
-        <figure class="px-10 pt-10">
-          <img src={img} alt="Shoes" class="rounded-xl w-1/2"  />
+        <figure class=" ">
+          <img src={img} alt="Shoes" class="rounded-xl h-24 "   />
         </figure>
         <div class="card-body items-center text-center">
-          <h2 class="card-title text-2xl ">{name}</h2>
+          <h2 class="card-title text-xl ">{name}</h2>
           <p><small>{description}</small> </p>
-          <p>Price: <span className='font-bold'>$ {price}</span> </p>
-          <p>Available Quantity: <span className='font-bold'>{availableQuantity}</span> </p>         
-          <p>Minimun Order Quantity: <span className='font-bold'>{minOrderQuantity}</span> </p>         
+          <p className='text-sm'>Price: <span className='font-bold'>$ {price}</span> </p>
+          <p className='text-sm'>Available Quantity: <span className='font-bold'>{availableQuantity}</span> </p>         
+          <p className='text-sm'>Minimun Order Quantity: <span className='font-bold'>{minOrderQuantity}</span> </p>         
           <div class="card-actions">
             <button class="btn btn-primary mt-3" onClick={ ()=>navigateToPurchase(_id) }>Purchase Now</button>
           </div>
