@@ -1,7 +1,5 @@
 import React from 'react';
-import portfolioImg from '../../images/portfolioWebsitedentpro.png'
-import portfolioImg2 from '../../images/portfolioWebsitedentpro2.png'
-import portfolioImg3 from '../../images/portfolioWebsitedentpro3.png'
+
 
 const Portfolio = () => {
     return (

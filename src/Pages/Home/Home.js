@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useParts from '../../Hooks/useParts';
+import Loading from '../Loading';
 import Parts from '../Shared/Parts/Parts';
 import Banner from './Banner';
 import BusinessSummary from './BusinessSummary';
@@ -18,7 +19,7 @@ const Home = () => {
             <Banner></Banner>
             <div>
                 <h2 className='pt-10  mb-2 text-4xl font-bold'>Our Featured Products</h2>
-                <div className='grid sm:grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-4 my-20'>
+                <div className='grid sm:grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-5 gap-y-10 my-20'>
                     {
                         homePageParts.map(part => <Parts
                             key={part._id}
@@ -31,8 +32,6 @@ const Home = () => {
             <Gallery></Gallery>
             <Review></Review>
             <Subscription></Subscription>
-
-
         </div>
     );
 };

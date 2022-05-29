@@ -6,16 +6,26 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { useQuery } from 'react-query';
+import Loading from '../Loading';
 
 const Review = () => {
 
-    const [reviews, setReviews] = useState([]);
+    // const [reviews, setReviews] = useState([]);
 
-    useEffect(() => {
-        fetch('https://rocky-reef-55202.herokuapp.com/reviews')
+    const {data:reviews, isLoading, } =useQuery('reviews',()=>fetch('https://rocky-reef-55202.herokuapp.com/reviews')
             .then(res => res.json())
-            .then(data => setReviews(data))
-    }, [])
+             )
+             if(isLoading){
+                 <Loading></Loading>
+             }
+    
+
+    // useEffect(() => {
+    //     fetch('https://rocky-reef-55202.herokuapp.com/reviews')
+    //         .then(res => res.json())
+    //         .then(data => setReviews(data))
+    // }, [])
 
     return (
         <div className='mt-10 mb-32'>
@@ -39,11 +49,11 @@ const Review = () => {
                     onSlideChange={() => console.log('slide change')}
                 >
                     {
-                        reviews.map((review, index) =>
+                        reviews?.map((review, index) =>
                             <div key={index} >
                                 <SwiperSlide>
                                     <div className='stack'>
-                                        <div className='h-56 card shadow-md bg-accent text-primary-content py-3'>
+                                        <div className='h-56 card shadow-md bg-yellow-100 text-primary-content py-3'>
                                             <div className='card-body '>
                                                 <h3 ><span className='text-2xl text-secondary font-bold '>{review.name}</span> </h3>
                                                 <p className='text-sm my-1'>{review.description}</p>
