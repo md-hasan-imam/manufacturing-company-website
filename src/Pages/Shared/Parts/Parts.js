@@ -13,8 +13,8 @@ const Parts = ({ part }) => {
 
   return (
     <div class="card w-96 bg-base-100 shadow-xl">
-      <figure class=" ">
-        <img src={img} alt="Shoes" class="rounded-xl h-24 " />
+      <figure class="p-5 ">
+        <img src={img} alt="Shoes" class="rounded-xl w-full " />
       </figure>
       <div class="card-body items-center text-center">
         <h2 class="card-title text-xl ">{name}</h2>

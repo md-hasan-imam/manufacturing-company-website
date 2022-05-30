@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile} from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Loading';
-import {toast } from 'react-toastify';
+import { toast } from 'react-toastify';
+import useToken from '../../Hooks/useToken';
 
 
 const SignUp = () => {
@@ -20,33 +20,29 @@ const SignUp = () => {
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
+    const [token] = useToken(user || gUser);
+
     const navigate = useNavigate();
-    const location = useLocation();
-    let from = location.state?.from?.pathname || "/";
 
-    useEffect( () =>{
-        if (user || gUser) {
-            navigate(from, { replace: true });
-        }
-    }, [user,gUser, from, navigate])
-
-
-    let signInError;
-
-    if (loading || gLoading || updating ) {
+    if (loading || gLoading || updating) {
         return <Loading></Loading>
     }
 
-    if (error || gError || updateError ) {
+    let signInError;
+
+    if (error || gError || updateError) {
         signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
     }
 
     const onSubmit = async data => {
-        await createUserWithEmailAndPassword(data.email, data.password );
+        await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
-        toast('User created successfully')
-
     }
+
+    if (token) {
+        navigate('/');
+    }
+
 
     return (
         <div className='flex h-screen justify-center items-center mt-5 mb-7'>

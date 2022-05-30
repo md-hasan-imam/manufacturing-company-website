@@ -17,7 +17,6 @@ const AddAReview = () => {
             description: event.target.description.value,
             ratings: event.target.ratings.value,
         }
-        console.log(newRatings);
 
         fetch('https://rocky-reef-55202.herokuapp.com/reviews', {
             method: 'POST',
