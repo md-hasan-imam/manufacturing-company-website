@@ -6,7 +6,7 @@ import Loading from '../Loading';
 
 const MakeAdmin = () => {
 
-    const { data: users, isLoading, refetch } = useQuery('reviews', () => fetch('http://localhost:5000/users')
+    const { data: users, isLoading, refetch } = useQuery('reviews', () => fetch('https://rocky-reef-55202.herokuapp.com/users')
         .then(res => res.json())
     )
     if (isLoading) {
@@ -14,7 +14,7 @@ const MakeAdmin = () => {
     }
 
     const makeAdmin = (email) => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://rocky-reef-55202.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -39,7 +39,7 @@ const MakeAdmin = () => {
         const proceed = window.confirm('Do you really want to Remove the user');
 
         if (proceed) {
-            fetch(`http://localhost:5000/user/${email}`, {
+            fetch(`https://rocky-reef-55202.herokuapp.com/user/${email}`, {
                 method: "DELETE",
             })
                 .then(res => res.json())

@@ -11,7 +11,6 @@ import Loading from '../Loading';
 
 const Review = () => {
 
-    // const [reviews, setReviews] = useState([]);
 
     const {data:reviews, isLoading } =useQuery('reviews',()=>fetch('https://rocky-reef-55202.herokuapp.com/reviews')
             .then(res => res.json())
@@ -20,13 +19,6 @@ const Review = () => {
                  <Loading></Loading>
              }
     
-
-    // useEffect(() => {
-    //     fetch('https://rocky-reef-55202.herokuapp.com/reviews')
-    //         .then(res => res.json())
-    //         .then(data => setReviews(data))
-    // }, [])
-
     return (
         <div className='mt-10 mb-32'>
             <div className='mb-20'>

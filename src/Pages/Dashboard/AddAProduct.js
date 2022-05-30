@@ -21,7 +21,7 @@ const AddAProduct = () => {
         }
         console.log(newProduct);
 
-        fetch('http://localhost:5000/addaproduct', {
+        fetch('https://rocky-reef-55202.herokuapp.com/addaproduct', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
