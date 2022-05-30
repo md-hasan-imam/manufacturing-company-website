@@ -1,42 +1,40 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, useNavigate,} from 'react-router-dom';
+import { Link, useNavigate, } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
 import Loading from '../Loading';
 import { useQuery } from 'react-query';
-
 
 const MyOrders = () => {
 
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
 
-
     const email = user.email;
 
-    const { data: myOrders, isLoading, refetch } = useQuery(['myOrders', email], () => fetch(`https://rocky-reef-55202.herokuapp.com/myorder/${email}`,{
-        method:"GET",
-        headers:{
-            'authorization':`Bearer ${localStorage.getItem('accessToken')}`
+    const { data: myOrders, isLoading, refetch } = useQuery(['myOrders', email], () => fetch(`https://rocky-reef-55202.herokuapp.com/myorder/${email}`, {
+        method: "GET",
+        headers: {
+            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
         }
     })
         .then(res => {
             console.log('res', res)
-            if(res.status === 401 || res.status === 403){
+            if (res.status === 401 || res.status === 403) {
                 navigate('/');
             }
-            return res.json()})
+            return res.json()
+        })
     )
     if (isLoading) {
         <Loading></Loading>
     }
 
 
-
     // deleting order 
     const handleDeleteOrder = id => {
-
+       
         const proceed = window.confirm('Do you really want to cancel order?');
 
         if (proceed) {
