@@ -21,8 +21,6 @@ const Purchase = () => {
         mode: "onChange"
     });
 
-
-
     const onSubmit = data => {
         const order = {
             name: name,

@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate, } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -73,8 +72,7 @@ const MyOrders = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* -- row 1 -- */}
-
+                        
                         {
                             myOrders?.map((order, index) => <tr
                                 key={index}
@@ -90,17 +88,10 @@ const MyOrders = () => {
                                     </Link>}
                                     {(order.paid) && <button className='btn btn-md mx-auto btn-success text-black'>Paid</button>}
                                 </td>
-                                {/* deleting order  */}
                                 <td className='text-xl font-bold'>
                                     <button onClick={() => handleDeleteOrder(order._id)} className='btn btn-md mx-auto btn-error text-black'>Cancel</button>
                                 </td>
-                                {/* <td>
-                                    {( !order.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>Pay Now</button></Link>}
-                                    {(order.paid) && <div>
-                                        <p><span className='text-success'>Paid</span></p>
-                                        <p>Transaction id: <span className='text-success'>{a.transactionId}</span></p>
-                                    </div>}
-                                </td> */}
+                                
                             </tr>)
                         }
                     </tbody>
