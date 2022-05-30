@@ -14,7 +14,7 @@ const Gallery = () => {
             <div className='mb-20'>
                 <h2 className='text-3xl my-3 font-bold'>OUR GALLERY</h2>
             </div>
-            <div className='grid grid-cols-3 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5 mx-auto px-5'>
+            <div className='grid  sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3  gap-5 mx-auto px-5'>
                 <img src={galler1} alt="gallery img" className='w-full rounded-lg'/>
                 <img src={galler2} alt="gallery img" className='w-full rounded-lg'/>
                 <img src={galler3} alt="gallery img" className='w-full rounded-lg'/>
