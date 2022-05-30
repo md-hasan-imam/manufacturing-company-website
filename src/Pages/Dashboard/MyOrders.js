@@ -20,7 +20,6 @@ const MyOrders = () => {
         }
     })
         .then(res => {
-            console.log('res', res)
             if (res.status === 401 || res.status === 403) {
                 navigate('/');
             }
@@ -34,11 +33,12 @@ const MyOrders = () => {
 
     // deleting order 
     const handleDeleteOrder = id => {
-       
+
         const proceed = window.confirm('Do you really want to cancel order?');
 
         if (proceed) {
-            fetch(`https://rocky-reef-55202.herokuapp.com/myorder?id=${id}`, {
+            const url = `https://rocky-reef-55202.herokuapp.com/myorder?id=${id}`;
+            fetch(url, {
                 method: "DELETE",
             })
                 .then(res => res.json())
@@ -53,6 +53,7 @@ const MyOrders = () => {
                     }
                 }
                 )
+                console.log(url)
         }
     }
 
@@ -85,8 +86,9 @@ const MyOrders = () => {
                                 <td className='text-lg font-bold'>{order.price}</td>
                                 <td className='text-lg font-bold '>{order.orderQuantity}</td>
                                 <td className='text-xl font-bold'>
-                                    <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-md mx-auto btn-success text-black'>Pay Now</button>
-                                    </Link>
+                                    {(!order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-md mx-auto btn-success text-black'>Pay Now</button>
+                                    </Link>}
+                                    {(order.paid) && <button className='btn btn-md mx-auto btn-success text-black'>Paid</button>}
                                 </td>
                                 {/* deleting order  */}
                                 <td className='text-xl font-bold'>

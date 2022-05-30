@@ -59,7 +59,9 @@ const Purchase = () => {
             .then(
                 data => setParts(data)
             )
+            console.log(url)
     }, [id])
+
 
 
     return (
