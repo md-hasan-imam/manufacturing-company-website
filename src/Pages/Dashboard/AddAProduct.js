@@ -17,7 +17,6 @@ const AddAProduct = () => {
             description: event.target.description.value,
             storequantity: event.target.storequantity.value,
             price: event.target.price.value,
- 
         }
         console.log(newProduct);
 
