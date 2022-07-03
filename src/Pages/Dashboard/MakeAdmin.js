@@ -83,7 +83,7 @@ const MakeAdmin = () => {
                                     {
                                         <td className='text-xl font-bold'>
                                             {
-                                                (user.role === 'admin' ? <button class="btn btn-md mx-auto bg-primary text-black hover:bg-yellow-300">Admin</button>
+                                                (user.role === 'admin' ? <button class="btn btn-primary btn-md mx-auto bg-primary text-black ">Admin</button>
                                                 :
                                                 <button onClick={()=>makeAdmin(user.email)} class="btn btn-md mx-auto btn-success text-black">Make Admin</button>
                                                 )

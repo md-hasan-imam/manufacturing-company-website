@@ -65,7 +65,7 @@ const AddAProduct = () => {
                                 <div className="form-control w-full max-w-xs ">
                                     <input type='number' name="price" placeholder='Input price' className="input input-bordered w-full max-w-xs" required/>
                                 </div>
-                                <input className='btn w-full max-w-xs bg-yellow-300 text-secondary my-4 hover:bg-primary' type="submit" value="Place Order" />
+                                <input className='btn btn-primary w-full max-w-xs  text-secondary my-4 hover:bg-primary' type="submit" value="Add Product" />
                             </form>
                         </div>
                     </div>

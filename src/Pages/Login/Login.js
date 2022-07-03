@@ -100,13 +100,13 @@ const Login = () => {
                         </div>
 
                         {signInError}
-                        <input className='btn w-full max-w-xs bg-yellow-300 text-secondary my-3 hover:bg-primary' type="submit" value="Login" />
+                        <input className='btn btn-primary w-full max-w-xs  text-secondary my-3 hover:bg-primary' type="submit" value="Login" />
                     </form>
                     <p><small>New to AUTOMA <Link className='text-blue-600' to="/signup">Create New Account</Link></small></p>
                     <div className="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
-                        className="btn btn-outline"
+                        className="btn btn-outline btn-primary"
                     >Continue with Google</button>
                 </div>
             </div>

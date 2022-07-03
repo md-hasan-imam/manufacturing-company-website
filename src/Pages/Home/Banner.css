@@ -1,3 +1,36 @@
-.custom-banner-bg{
-    background-color: #EFEFEF;
+
+.custom-banner{
+    background-image: url(../../images/banner/banner.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* .banner-text-background{
+    background-color: rgb(15, 23, 42, .9);
+    border: 3px solid #D01818;
+    transform: skew(5deg);
+}
+
+.banner-text-background h1{
+    transform: skew(-5deg);
+    
+}
+.banner-text-background h2{
+    transform: skew(-5deg);
+    margin-left: 10px;
+}
+.banner-text-background button{
+    transform: skew(-5deg);
+    margin-left: -5px;
+} */
+
+.banner-images{
+    background: rgba(255, 255, 255);
+    border: 3px solid #D01818;
+    border-radius: 15px 2px 15px 2px;
+
+}
+.btn{
+    color: White;
 }

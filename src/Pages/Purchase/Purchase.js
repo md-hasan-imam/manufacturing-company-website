@@ -132,7 +132,7 @@ const Purchase = () => {
                                         {errors.orderQuantity?.type === ('min' || 'max') && <span className="label-text-alt text-red-500">{errors?.orderQuantity?.message}</span>}
                                     </label>
                                 </div>
-                                <input className='btn w-full max-w-xs bg-yellow-300 text-secondary my-3 hover:bg-primary' disabled={!formState.isValid} type="submit" value="Place Order" />
+                                <input className='btn btn-primary w-full max-w-xs = text-secondary my-3 hover:bg-primary' disabled={!formState.isValid} type="submit" value="Place Order" />
                             </form>
                         </div>
                     </div>

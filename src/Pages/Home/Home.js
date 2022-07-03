@@ -17,9 +17,9 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <div>
-                <h2 className='pt-10  mb-2 text-4xl font-bold'>Our Featured Products</h2>
-                <div className='grid sm:grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-5 gap-y-10 my-20'>
+            <div className='mb-28'>
+                <h2 className='pt-10 text-4xl font-bold'>Featured <span className='text-primary'>Products</span></h2>
+                <div className='grid sm:grid-cols-1 md:grid-cols-2  lg:grid-cols-3  gap-y-10 gap-x-5 mt-12'>
                     {
                         homePageParts.map(part => <Parts
                             key={part._id}

@@ -121,7 +121,7 @@ const SignUp = () => {
                         </div>
 
                         {signInError}
-                        <input className='btn w-full max-w-xs bg-yellow-300 text-secondary my-3 hover:bg-primary' type="submit" value="Sign Up" />
+                        <input className='btn btn-primary w-full max-w-xs  text-secondary my-3 hover:bg-primary' type="submit" value="Sign Up" />
                     </form>
                     <p><small>Already have an account? <Link className='text-blue-600' to="/login">Please login</Link></small></p>
                     <div className="divider">OR</div>

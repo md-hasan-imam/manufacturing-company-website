@@ -1,8 +1,10 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import logo from '../../../images/logo.png'
+import './header.css'
 
 const Header = () => {
 
@@ -16,71 +18,74 @@ const Header = () => {
     return (
         <div className="navbar bg-base-100 mt-2">
             <div className="navbar-start">
-                <div className="dropdown">
+                <div className="dropdown navmenu-ghost-button">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="#D01818" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </label>
-                    <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-sm">
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/portfolio">My Portfolio</Link></li>
-                        <li><Link to="/blogs">Blogs</Link></li>
+                    <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-sm gap-x-2 primary-font">
+                        <li><NavLink to="/">Home</NavLink></li>
+                        <li><NavLink to="/portfolio">My Portfolio</NavLink></li>
+                        <li><NavLink to="/blogs">Blogs</NavLink></li>
                         {
-                            user && <li><Link to="/dashboard">Dashboard</Link></li>
+                            user && <li><NavLink to="/dashboard">Dashboard</NavLink></li>
                         }
                         <div>
                             {user
                                 ?
-                                <div className='flex flex-col'>
-                                    <div className='mx-auto'>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
+                                <div className=''>
+                                    <button className="btn btn-outline btn-secondaryinline font-normal normal-case primary-font" onClick={logout} >Sign Out</button>
+                                    <div>
+                                        <div className=''>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
                                     </div>
-                                    <small className='inline text-xs'>{user.displayName}</small>
-                                    <button className="btn btn-ghost inline" onClick={logout} >Sign Out</button>
+                                    <small className='text-xs'>{user.displayName}</small>
                                 </div>
                                 :
-                                <div className='py-3'>
-                                    <li>
-
-                                        <Link to="/login">Login</Link>
-                                    </li>
-                                </div>
+                                <li>
+                                    <NavLink to="/login">Login</NavLink>
+                                </li>
                             }
                         </div>
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-4xl ml-4">AUTOMA</a>
+                <div className='ml-20'>
+                    <Link to='/' className=" text-4xl">
+                        <img src={logo} alt="" className='' style={{ width: '130px'}} />
+                    </Link>
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal p-0 text-xl">
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/portfolio">My Portfolio</Link></li>
-                    <li><Link to="/blogs">Blogs</Link></li>
+                <ul className="menu menu-horizontal p-0 text-lg gap-x-2 primary-font">
+                    <li><NavLink to="/">Home</NavLink></li>
+                    <li><NavLink to="/portfolio">My Portfolio</NavLink></li>
+                    <li><NavLink to="/blogs">Blogs</NavLink></li>
                     {
-                        user && <li><Link to="/dashboard">Dashboard</Link></li>
+                        user && <li><NavLink to="/dashboard">Dashboard</NavLink></li>
                     }
                     <div>
                         {user
                             ?
-                            <div className='flex flex-col'>
-                                <div className='mx-auto'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
+                            <div className='flex justify-between mr-5'>
+                                <button className="btn btn-outline btn-secondary inline text-lg normal-case font-normal mr-3" onClick={logout} >Sign Out</button>
+                                <div>
+                                    <div className='mx-auto'>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
+                                    <small className=' text-xs primary-font'>{user.displayName}</small>
                                 </div>
-                                <small className='inline text-xs'>{user.displayName}</small>
-                                <button className="btn btn-ghost inline" onClick={logout} >Sign Out</button>
+
                             </div>
                             :
-                            <div className='py-3'>
-                                <li>
-
-                                    <Link to="/login">Login</Link>
-                                </li>
-                            </div>
+                            <li>
+                                <NavLink to="/login">Login</NavLink>
+                            </li>
                         }
                     </div>
                 </ul>
