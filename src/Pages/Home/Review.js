@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import './review.css'
+
 import { useQuery } from 'react-query';
 import Loading from '../Loading';
 
@@ -26,15 +28,28 @@ const Review = () => {
             <div className='mx-5'>
                 <Swiper
                     // install Swiper modules
-                    autoplay={{
+                    Autoplay={{
                         autoplay:true,
-                        delay: 1500,
+                        delay: 1000,
                         disableOnInteraction: false,
                         loop:true
                     }}
                     modules={[Navigation, Pagination, A11y]}
                     spaceBetween={50}
-                    slidesPerView={3}
+                    breakpoints={{
+                        640: {
+                          slidesPerView: 1,
+                          spaceBetween: 20,
+                        },
+                        768: {
+                          slidesPerView: 2,
+                          spaceBetween: 40,
+                        },
+                        1024: {
+                          slidesPerView: 3,
+                          spaceBetween: 50,
+                        },
+                      }}
                     navigation
                     pagination={{ clickable: true }}
                     onSwiper={(swiper) => console.log(swiper)}
