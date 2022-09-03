@@ -34,6 +34,7 @@ const Review = () => {
                         disableOnInteraction: false,
                         loop:true
                     }}
+                    slidesPerView={1}
                     modules={[Navigation, Pagination, A11y]}
                     spaceBetween={50}
                     breakpoints={{
@@ -62,7 +63,7 @@ const Review = () => {
                                 <SwiperSlide>
                                     <div className='stack'>
                                         <div className='h-56 card bg-white text-primary-content py-3'>
-                                            <div className='card-body '>
+                                            <div className='card-body'>
                                                 <h3 ><span className='text-2xl text-primary font-bold '>{review.name}</span> </h3>
                                                 <p className='text-sm my-1 text-secondary font-bold'>{review.description}</p>
                                                 <p className='text-secondary'>Ratings: <span className='text-lg font-bold text-primary'>{review.ratings}</span></p>
