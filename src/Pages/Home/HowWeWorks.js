@@ -6,6 +6,7 @@ import step3 from '../../images/how we works step 3.svg'
 const HowWeWorks = () => {
     return (
         <section id='howweworks' className='bg-base-100 my-24'>
+            <h2 className='pt-10 text-4xl font-bold'>How we<span className='text-primary'> works</span>?</h2>
             <div className="container px-3 md:px-5 lg:px-5 mx-auto">
                 <ul class="steps lg:w-4/5 steps-vertical lg:steps-horizontal pt-16 pb-16 ">
                     <li class="step step-primary font-semibold">Receive Order</li>
