@@ -6,6 +6,7 @@ import Parts from '../Shared/Parts/Parts';
 import Banner from './Banner';
 import BusinessSummary from './BusinessSummary';
 import Gallery from './Gallery';
+import HowWeWorks from './HowWeWorks';
 import Review from './Review';
 import Subscription from './Subscription';
 
@@ -28,6 +29,7 @@ const Home = () => {
                     }
                 </div>
             </div>
+            <HowWeWorks></HowWeWorks>
             <BusinessSummary></BusinessSummary>
             <Gallery></Gallery>
             <Review></Review>
